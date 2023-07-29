@@ -3,10 +3,12 @@ import React from "react";
 export default function BotSpecs({ bot, onBackClick, onEnlistClick }) {
   return (
     <div className="card">
+        <h2>{bot.name.toUpperCase()} SPECIFICATIONS</h2>
        <div className="card-body">
         <img src={bot.avatar_url} alt={bot.name} />
           <h5 className="card-title">
-            {bot.name} <i className={bot.bot_class} />
+            <h4><i>{bot.name} </i></h4>
+            {bot.bot_class}
           </h5>
           <div className="card-text">
             <p>{bot.catchphrase}</p>
@@ -26,8 +28,10 @@ export default function BotSpecs({ bot, onBackClick, onEnlistClick }) {
             </span>
           </div>
         </div>
-      <button className = "btn btn-primary" onClick={onBackClick}>Back</button>
-      <button className = "btn btn-success" onClick={() => onEnlistClick(bot.id)}>Enlist {bot.name}</button>
+        <div style={{display: "flex", justifyContent: "center", gap: "10px", marginBottom: "20px"}}>
+      <button className = "btn btn-primary" onClick={onBackClick} style={{fontFamily: "Inconsolata, monospace"}}>Back</button><br></br>
+      <button className = "btn btn-success" onClick={() => onEnlistClick(bot.id)} style={{fontFamily: "Inconsolata, monospace"}}>Enlist {bot.name}</button>
+      </div>
     </div>
   );
 }

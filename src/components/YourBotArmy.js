@@ -11,7 +11,7 @@ function YourBotArmy({ bots }) {
       <div className="ui five column grid">
         <div className="row bot-army-row">
           {botCollection}
-          <h3>YOUR BOT ARMY</h3>
+          <h3 style={{marginTop: "10px"}}>YOUR BOT ARMY</h3>
         </div>
       </div>
     </div>

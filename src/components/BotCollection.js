@@ -9,8 +9,9 @@ export default function BotCollection({ bots, handleClick }) {
         </div>
         <div className="card-body">
           <h5 className="card-title">
-            {bot.name} <i className={bot.bot_class} />
+           <i>{bot.name}</i>
           </h5>
+          <h6>{bot.bot_class} </h6>
           <div className="card-text">
             <p>{bot.catchphrase}</p>
           </div>
@@ -34,7 +35,7 @@ export default function BotCollection({ bots, handleClick }) {
   ));
   return (
     <div className="container">
-      <h2>YOUR BOT COLLECTION</h2> <br></br>
+      <h2 style={{marginTop: "15px"}}>YOUR BOT COLLECTION</h2> <br></br>
       <div className="row">{botsCollection}</div>
     </div>
   );
