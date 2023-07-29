@@ -1,37 +1,41 @@
-export default function BotCollection({ bots }) {
-  const botCollection = bots.map((bot) => (
-    <div key={bot.id}>
-      <div className="bot-image">
-        <img alt={bot.name} src={bot.avatar_url} />
-      </div>
-      <div>
-        <div className="header">
-          {bot.name} <i className={bot.bot_class} />
+import React from "react";
+
+export default function BotCollection({ bots, handleClick }) {
+  const botsCollection = bots.map((bot) => (
+    <div className="col-md-4 mb-4" key={bot.id} onClick={() => handleClick(bot.id)}>
+      <div className="card">
+        <div className="bot-image">
+          <img className="card-img-top" src={bot.avatar_url} alt={bot.name} />
         </div>
-        <div className="phrase">
-          <p>{bot.catchphrase}</p>
-        </div>
-        <div>
-          <span>
-            <i className="icon heartbeat" /> {bot.health}{" "}
-          </span>
-          <span>
-            <i className="fas fa-bolt" /> {bot.damage}
-          </span>
-          <span>
-            <i className="fas fa-shield" /> {bot.armor}{" "}
-          </span>
+        <div className="card-body">
+          <h5 className="card-title">
+            {bot.name} <i className={bot.bot_class} />
+          </h5>
+          <div className="card-text">
+            <p>{bot.catchphrase}</p>
+          </div>
+          <div className="card-text">
+            <span>
+              <i className="fas fa-heartbeat" />
+              {bot.health}
+            </span>
+            <span>
+              <i className="fas fa-bolt" />
+              {bot.damage}
+            </span>
+            <span>
+              <i className="fas fa-shield-alt" />
+              {bot.armor}
+            </span>
+          </div>
         </div>
       </div>
     </div>
   ));
-
   return (
-    <div>
-      <h2>
-        <em>YOUR BOT COLLECTION</em>
-      </h2>
-      {botCollection}
+    <div className="container">
+      <h2>YOUR BOT COLLECTION</h2> <br></br>
+      <div className="row">{botsCollection}</div>
     </div>
   );
 }
