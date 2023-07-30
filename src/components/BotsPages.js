@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BotCollection from "./BotCollection";
 import YourBotArmy from "./YourBotArmy";
 import BotSpecs from "./BotSpecs";
+import SortBar from "./SortBar";
 
 export default function Botspages() {
   const [bots, setBots] = useState([]);
@@ -66,6 +67,7 @@ export default function Botspages() {
 
   return (
     <div>
+       <SortBar bots={bots} setBots={setBots} />
       {selectedBot === null ? (
         // Shows the view of the YourBotArmy and BotCollection if a bot is not selected
         <>
