@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 export default function SortBar({ bots, setBots }) {
+   // Initialized the state to keep track of the sorting order 
   const [sortOrder, setSortOrder] = useState("ascending");
 
+  //sorts the bots by health in both descending and ascending order
   const sortHealth = () => {
     const health = [...bots];
     if (sortOrder === "ascending") {
@@ -15,6 +17,7 @@ export default function SortBar({ bots, setBots }) {
     setBots(health);
   };
 
+//sorts the bots by damage in both descending and ascending order
   const sortDamage = () => {
     const damage = [...bots];
     if (sortOrder === "ascending") {
@@ -27,6 +30,7 @@ export default function SortBar({ bots, setBots }) {
     setBots(damage);
   };
 
+  //sorts the bots by armor in both descending and ascending order
   const sortArmor = () => {
     const armor = [...bots];
     if (sortOrder === "ascending") {
