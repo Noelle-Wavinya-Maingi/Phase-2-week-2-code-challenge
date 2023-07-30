@@ -9,7 +9,11 @@ function YourBotArmy({ bots, handleClick }) {
     <div className="col-md-2 mb-3" key={bot.id}>
       <div
         className="card"
-        style={{ justifyContent: "space-between", marginLeft: "40px" , marginTop: "20px" }}
+        style={{
+          justifyContent: "space-between",
+          marginLeft: "40px",
+          marginTop: "20px",
+        }}
       >
         <div className="bot-image">
           <img className="card-img-top" src={bot.avatar_url} alt={bot.name} />
@@ -67,9 +71,7 @@ function YourBotArmy({ bots, handleClick }) {
 
   return (
     <div>
-      <h3 style={{ marginTop: "10px", marginBottom: "10px" }}>
-        YOUR BOT ARMY
-      </h3>
+      <h3 style={{ marginTop: "10px", marginBottom: "10px" }}>YOUR BOT ARMY</h3>
       <div
         className="row bot-army-row"
         style={{ background: "olive", marginBottom: "20px" }}

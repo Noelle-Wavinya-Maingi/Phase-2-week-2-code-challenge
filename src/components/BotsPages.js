@@ -53,21 +53,22 @@ export default function Botspages() {
   // Handles removing the bot from YourBotArmy
   function removeBot(id) {
     //finds the bot to be removed from the enlisted bots
-    const removedBot = enlistedBots.find((bot) => bot.id === id)
+    const removedBot = enlistedBots.find((bot) => bot.id === id);
     setEnlistedBots((prevEnlistedBots) =>
       prevEnlistedBots.filter((bot) => bot.id !== id)
     );
-    if(removedBot){
+    if (removedBot) {
       //alerts with the name of the bot that has been removed
-      alert(`${removedBot.name} has been removed from your army!`)
+      alert(`${removedBot.name} has been removed from your army!`);
       setSelectedBot(null);
+      // Adds the removed bot back to the bots state
+      setBots((prevBots) => [removedBot, ...prevBots])
     }
-   
   }
 
   return (
     <div>
-       <SortBar bots={bots} setBots={setBots} />
+      <SortBar bots={bots} setBots={setBots} />
       {selectedBot === null ? (
         // Shows the view of the YourBotArmy and BotCollection if a bot is not selected
         <>

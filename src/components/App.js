@@ -1,5 +1,5 @@
-import './App.css';
-import Botspages from './BotsPages';
+import "./App.css";
+import Botspages from "./BotsPages";
 
 function App() {
   return (
