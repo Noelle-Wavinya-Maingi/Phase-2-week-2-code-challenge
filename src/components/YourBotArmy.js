@@ -7,8 +7,9 @@ function YourBotArmy({ bots, handleClick }) {
   }
 
   const botCollection = bots.map((bot) => (
+    <div style={{background: "olive",marginBottom: "20px"}} >
     <div className="col-md-2 mb-3" key={bot.id}>
-      <div className="card" style={{justifyContent: "space-between", marginLeft: "40px"}} >
+      <div className="card" style={{justifyContent: "space-between", marginLeft: "40px", marginTop: "20px"}} >
         <div className="bot-image" >
           <img className="card-img-top" src={bot.avatar_url} alt={bot.name}  />
         </div>
@@ -35,12 +36,13 @@ function YourBotArmy({ bots, handleClick }) {
         </div>
       </div>
     </div>
+    </div>
     
   ));
 
   return (
-        <div className="row bot-army-row" style={{background: "olive",marginBottom: "20px"}}>
-          <h3 style={{ marginTop: "10px", color: "wheat", marginBottom: "10px" }}>YOUR BOT ARMY</h3>
+        <div className="row bot-army-row" >
+          <h3 style={{ marginTop: "10px", marginBottom: "10px" }}>YOUR BOT ARMY</h3>
           {botCollection}
         </div>
   );
