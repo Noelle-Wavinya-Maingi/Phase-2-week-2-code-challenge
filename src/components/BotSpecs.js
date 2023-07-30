@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BotSpecs({ bot, onBackClick, onEnlistClick }) {
   return (
-    <div className="card"  style={{backgroundColor: "whitesmoke"}}>
+    <div className="card"  style={{backgroundColor: "whitesmoke", width: "50%", marginLeft: "480px"}}>
         <h2>{bot.bot_class} {bot.name.toUpperCase()} SPECIFICATIONS</h2>
        <div className="card-body">
         <img src={bot.avatar_url} alt={bot.name} />

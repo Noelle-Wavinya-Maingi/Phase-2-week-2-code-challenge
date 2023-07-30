@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BotCollection({ bots, handleClick }) {
   const botsCollection = bots.map((bot) => (
-    <div className="col-md-4 mb-4" key={bot.id} onClick={() => handleClick(bot.id)}>
+    <div className="col-md-2 mb-4" key={bot.id} onClick={() => handleClick(bot.id)}>
       <div className="card">
         <div className="bot-image">
           <img className="card-img-top" src={bot.avatar_url} alt={bot.name} />
