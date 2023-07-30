@@ -17,16 +17,13 @@ export default function BotCollection({ bots, handleClick }) {
           </div>
           <div className="card-text">
             <span>
-              <i className="fas fa-heartbeat" />
-              {bot.health}
+              <i className="bi bi-heart-pulse"style={{color: "red", paddingRight:"4px"}} />{bot.health}
             </span>
             <span>
-              <i className="fas fa-bolt" />
-              {bot.damage}
+            <i class="bi bi-lightning-fill"  style={{color: "gold", marginLeft: "12px", paddingRight:"4px"}}/>{bot.damage}
             </span>
             <span>
-              <i className="fas fa-shield-alt" />
-              {bot.armor}
+            <i class="bi bi-shield-shaded" style={{color: "silver", marginLeft: "12px", paddingRight:"4px"}} />{bot.armor}
             </span>
           </div>
         </div>

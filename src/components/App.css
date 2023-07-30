@@ -2,6 +2,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 .App {
   text-align: center;
@@ -42,10 +43,12 @@
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,p{
   font-family: 'Inconsolata', monospace;
 }
 
 span{
   font-family: 'Inconsolata', monospace;
 }
+
+
