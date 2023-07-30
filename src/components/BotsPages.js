@@ -33,26 +33,35 @@ export default function Botspages() {
   // Removes the bot from the BotCollection and enlists it in YourBotArmy
   function enlistBot(id) {
     const botToEnlist = bots.find((bot) => bot.id === id);
-    
+
     // Checks if a bot with the same class already exists in enlistedBots
-    const EnlistedBotExists = enlistedBots.find((bot) => bot.bot_class === botToEnlist.bot_class);
-  
+    const EnlistedBotExists = enlistedBots.find(
+      (bot) => bot.bot_class === botToEnlist.bot_class
+    );
+
     if (botToEnlist && !EnlistedBotExists) {
       setEnlistedBots((prevEnlistedBots) => [...prevEnlistedBots, botToEnlist]);
       setBots((prevBots) => prevBots.filter((bot) => bot.id !== id));
       setSelectedBot(null);
-    } else{
-      alert(`${botToEnlist.bot_class} is already enlisted to your army`)
+    } else {
+      alert(`A ${botToEnlist.bot_class} bot has already enlisted to your army`);
       setSelectedBot(null);
     }
   }
 
   // Handles removing the bot from YourBotArmy
   function removeBot(id) {
+    //finds the bot to be removed from the enlisted bots
+    const removedBot = enlistedBots.find((bot) => bot.id === id)
     setEnlistedBots((prevEnlistedBots) =>
       prevEnlistedBots.filter((bot) => bot.id !== id)
     );
-    setSelectedBot(null);
+    if(removedBot){
+      //alerts with the name of the bot that has been removed
+      alert(`${removedBot.name} has been removed from your army!`)
+      setSelectedBot(null);
+    }
+   
   }
 
   return (
